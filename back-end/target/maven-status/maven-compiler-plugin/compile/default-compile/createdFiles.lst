@@ -1,0 +1,3 @@
+org/chatapp/websocket/ChatHandler.class
+org/chatapp/config/WebSocketConfig.class
+org/chatapp/ChatAppApplication.class

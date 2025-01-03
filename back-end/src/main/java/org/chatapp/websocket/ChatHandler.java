@@ -18,8 +18,13 @@ public class ChatHandler extends TextWebSocketHandler {
 
     @Override
     public void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
-        // WebRTC aqui
-        System.out.println("Mensagem recebida: " + message.getPayload());
+        String messagePayload = message.getPayload();
+        System.out.println("Mensagem recebida: " + messagePayload);
+
+        if ("ping".equals(messagePayload)) {
+            session.sendMessage(new TextMessage("pong"));
+            return;
+        }
 
         for (WebSocketSession s : sessions) {
             if (s.isOpen() && !s.getId().equals(session.getId())) {
