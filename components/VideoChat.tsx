@@ -10,7 +10,7 @@ const VideoChat = () => {
 
   useEffect(() => {
     const connectWebSocket = () => {
-      const socket = new WebSocket("wss://chat-app-deploy-2b6w.onrender.com/ws/chat");
+      const socket = new WebSocket("wss://chat-app-j15e.onrender.com/ws/chat");
 
       socket.onopen = () => {
         console.log("WebSocket connection opened");
